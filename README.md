@@ -26,8 +26,7 @@ of prediction. In order to try to get this idea off the ground, there are some o
 ## Video tutorials
     
 Video tutorials are available at https://www.microprediction.com/python-1 to help you
-get started. There's a video explanation of FitCrawler, SequentialCrawler and friends
-at https://www.microprediction.com/fitcrawler.     
+get started. 
     
 ## Presentations
 
@@ -54,5 +53,11 @@ seemingly univariate time series such as [this one](https://www.microprediction.
 really multi-variate implied copulas. You can retrieve them in multivariate
 format using the .get_lagged_copulas or .get_lagged_zvalues methods of the [MicroReader](https://github.com/microprediction/microprediction/blob/master/microprediction/reader.py). 
 
+## Install 
 
+    This repo isn't intended to be used as a package. 
+    
+## "Fork" and Github actions
+
+If you fork this repo, be aware that the github action won't run automatically. You'll have to create a new one and copy it over. 
 
