@@ -32,6 +32,7 @@ jobs:
             pip install git+https://github.com/microprediction/microprediction.git
             pip install --upgrade statsmodels
             pip install --upgrade copulas
+            pip install --upgrade microconventions
             pip install matplotlib
       - name: Run the model 
         env:
