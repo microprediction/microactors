@@ -1,28 +1,28 @@
-import os 
-COMBLE_MAMMAL = os.environ.get('COMBLE_MAMMAL')
-
 from microprediction import MicroWriter
 import numpy as np
 from pprint import pprint
 import matplotlib.pyplot as plt
 import random 
-WRITE_KEY = COMBLE_MAMMAL
-ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)
-REPO = 'https://github.com/microprediction/microprediction/blob/master/copula_examples/' + ANIMAL.lower().replace(
-    ' ', '_') + '.py'
 import time
 import warnings
 warnings.filterwarnings('ignore')
 from copulas.multivariate import GaussianMultivariate
 import pandas as pd
+
+
+# Grab the Github secret 
+import os 
+COMBLE_MAMMAL = os.environ.get('COMBLE_MAMMAL')
+# 
+WRITE_KEY = COMBLE_MAMMAL
+ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)
+REPO = 'https://github.com/microprediction/microprediction/blob/master/copula_examples/' + ANIMAL.lower().replace(
+    ' ', '_') + '.py'
+print('This is '+ANIMAL)
 VERBOSE = False
 
-# We simply loop over all z3~ streams
-# This script might be run once every hour or so
-# Remark: It's lazy to just sample synthetic data
-# Some more evenly spaced sampling would be preferable
-# See https://www.microprediction.com/blog/lottery for discussion
 
+# Get historical data, fit a copula, and submit 
 
 def fit_and_sample(lagged_zvalues:[[float]],num:int, copula=None):
     """ Example of fitting a copula function, and sampling
@@ -31,6 +31,9 @@ def fit_and_sample(lagged_zvalues:[[float]],num:int, copula=None):
            returns: [ [z1, z2, z3] ]  representative sample
 
     """
+    # Remark: It's lazy to just sample synthetic data
+    # Some more evenly spaced sampling would be preferable.  
+    # See https://www.microprediction.com/blog/lottery for discussion
 
     df = pd.DataFrame(data=lagged_zvalues)
     if copula is None:
