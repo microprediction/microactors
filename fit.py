@@ -47,7 +47,7 @@ if __name__ == "__main__":
     mw = MicroWriter(write_key=WRITE_KEY)
     mw.set_repository(REPO) # Just polite
 
-    NAMES = [ n for n in mw.get_stream_names() if 'z2~' in name or 'z3~' in name ]
+    NAMES = [ n for n in mw.get_stream_names() if 'z2~' in n or 'z3~' in n ]
     for _ in range(10):
         name = random.choice(NAMES)
         for delay in mw.DELAYS:
