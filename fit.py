@@ -5,7 +5,7 @@ from microprediction import MicroWriter
 import numpy as np
 from pprint import pprint
 import matplotlib.pyplot as plt
-
+import random 
 WRITE_KEY = COMBLE_MAMMAL
 ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)
 REPO = 'https://github.com/microprediction/microprediction/blob/master/copula_examples/' + ANIMAL.lower().replace(
@@ -44,10 +44,11 @@ if __name__ == "__main__":
     mw = MicroWriter(write_key=WRITE_KEY)
     mw.set_repository(REPO) # Just polite
 
-    for name in mw.get_streams():
-        if 'z3~' in name:
-            for delay in mw.DELAYS:
-                lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
-                if len(lagged_zvalues)>20:
-                    zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
-                    res = mw.submit_zvalues(name=name, zvalues=zvalues, delay=delay )
+    NAMES = [ n for n in mw.get_stream_names() if 'z2~' in name or 'z3~' in name ]
+    for _ in range(10):
+        name = random.choice(NAMES)
+        for delay in mw.DELAYS:
+            lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
+            if len(lagged_zvalues)>20:
+                zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
+                res = mw.submit_zvalues(name=name, zvalues=zvalues, delay=delay )
