@@ -6,7 +6,7 @@ Here's what's up:
 
 - Anyone can publish live data repeatedly, [like this](https://github.com/microprediction/microprediction/blob/master/feed_examples_live/traffic_live.py) say, and it
  creates a stream like [this one](https://www.microprediction.org/stream_dashboard.html?stream=electricity-load-nyiso-overall).
-- Some github repos like this one, or other sceduled jobs, make regular predictions (there are also some algorithms like [this guy](https://github.com/microprediction/microprediction/blob/master/crawler_examples/soshed_boa.py) that use running processes instead)
+- Some github repos like this one make regular predictions (there are also some algorithms like [this guy](https://github.com/microprediction/microprediction/blob/master/crawler_examples/soshed_boa.py) that use running processes instead)
 
 ## Why? 
 Free prediction for all ! 
