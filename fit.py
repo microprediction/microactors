@@ -42,6 +42,7 @@ def fit_and_sample(lagged_zvalues:[[float]],num:int, copula=None):
 
 if __name__ == "__main__":
     mw = MicroWriter(write_key=WRITE_KEY)
+    mw.set_repository(REPO) # Just polite
 
     for name in mw.get_streams():
         if 'z3~' in name:
