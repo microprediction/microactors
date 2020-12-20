@@ -6,9 +6,7 @@ Here's what's up:
 
 - Anyone can publish live data repeatedly, [like this](https://github.com/microprediction/microprediction/blob/master/feed_examples_live/traffic_live.py) say, and it
  creates a stream like [this one](https://www.microprediction.org/stream_dashboard.html?stream=electricity-load-nyiso-overall).
-- Some github repos like this one, or other sceduled jobs, make regular predictions. 
-- There are also some algorithms like [this guy](https://github.com/microprediction/microprediction/blob/master/crawler_examples/soshed_boa.py) that also compete to make distributional predictions of
-your data feed 1 min ahead, 5 min ahead, 15 min ahead and 1 hr ahead, but insteaad run in process.  
+- Some github repos like this one, or other sceduled jobs, make regular predictions (there are also some algorithms like [this guy](https://github.com/microprediction/microprediction/blob/master/crawler_examples/soshed_boa.py) that use running processes instead)
 
 ## Why? 
 Free prediction for all ! 
@@ -57,7 +55,7 @@ format using the .get_lagged_copulas or .get_lagged_zvalues methods of the [Micr
 
     This repo isn't intended to be used as a package. 
     
-## "Fork" and Github actions
+## On Forking and Github actions
 
 If you fork this repo, be aware that the github action won't run automatically. You'll have to create a new one and copy it over. 
 
