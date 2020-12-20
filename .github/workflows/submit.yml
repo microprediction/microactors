@@ -33,9 +33,9 @@ jobs:
             pip install --upgrade statsmodels
             pip install --upgrade copulas
             pip install matplotlib
-      - name: Create data in timestamp2
+      - name: Run the model 
         env:
-          COMBAL_MAMMAL: ${{ secrets.COMBAL_MAMMAL }}
+          COMBLE_MAMMAL: ${{ secrets.COMBLE_MAMMAL }}
         run: |
           python fit.py
      
