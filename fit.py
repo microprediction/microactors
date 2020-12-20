@@ -54,4 +54,10 @@ if __name__ == "__main__":
             lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
             if len(lagged_zvalues)>20:
                 zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
-                res = mw.submit_zvalues(name=name, zvalues=zvalues, delay=delay )
+                pprint((name, delay))
+                try:
+                    res = mw.submit_zvalues(name=name, zvalues=zvalues, delay=delay )
+                    pprint(res)
+                except Exception as e:
+                    print(e)
+                time.sleep(1)
