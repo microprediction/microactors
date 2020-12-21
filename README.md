@@ -3,7 +3,7 @@
 
 1. Fork it
 2. Open up [this notebook](https://github.com/microprediction/microactors/blob/main/New_Key.ipynb) in colab and run it to generate yourself a write key. 
-3. Add a Github secret called WRITE_KEY and set it to your write key ([instructions](https://www.google.com/search?q=how+to+create+a+github+secret))
+3. Save the key as a Github secret called WRITE_KEY ([instructions](https://www.google.com/search?q=how+to+create+a+github+secret))
 4. Click on "accept" when Github asks you if you want to enable github actions. Go to Actions and you'll see the only action used
 in your repo (like [this one](https://github.com/microprediction/microactors/blob/main/.github/workflows/submit.yml)). You should be able to enable it. 
 5. Go to www.microprediction.org and plug your write key into the dashboard. You'll see something like this, eventually. 
