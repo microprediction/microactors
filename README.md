@@ -1,7 +1,7 @@
 
 # How you use this repository 
 
-1. Fork it
+1. Fork it 
 2. Open up [this notebook](https://github.com/microprediction/microactors/blob/main/New_Key.ipynb) in colab and run it to generate yourself a write key. 
 3. Save the key as a Github secret called WRITE_KEY ([instructions](https://www.google.com/search?q=how+to+create+a+github+secret))
 4. Click on "accept" when Github asks you if you want to enable github actions. Go to Actions and you'll see the only action used
@@ -14,6 +14,8 @@ That's all. Later, go to www.microprediction.org and plug your write key into th
 
 
 If you are curious about step 2, see [instructions](https://www.microprediction.com/private-keys) for other ways, and a cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier.
+
+If you'd rather not fork, just copy [fit.py](https://github.com/microprediction/microactors/blob/main/fit.py) and [submit.yml](https://github.com/microprediction/microactors/blob/main/.github/workflows/submit.yml) as that's pretty much it. 
 
 ## Do you like fitting multivariate densities or Copulas? 
 
