@@ -1,7 +1,17 @@
-# microprediction actor examples
 
-Hi. This is an example of a repository that makes predictions at www.microprediction.org
+# How you use this repository 
 
+1. Fork it
+2. Compute yourself a WRITE_KEY (really easy - see [instructions](https://www.microprediction.com/private-keys) and cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier). 
+3. Add a Github secret called WRITE_KEY and set it to your write key. 
+4. Click on "accept" when Github asks you if you want to enable github actions. Go to Actions and you'll see the only action used
+in your repo (like [this one](https://github.com/microprediction/microactors/blob/main/.github/workflows/submit.yml)). You should be able to enable it. 
+5. Go to www.microprediction.org and plug your write key into the dashboard. You'll see something like this, eventually. 
+
+![](https://i.imgur.com/uwttTku.png)
+
+
+## New to microprediction? 
 Here's what's up:
 
 - Anyone can publish live data repeatedly, [like this](https://github.com/microprediction/microprediction/blob/master/feed_examples_live/traffic_live.py) say, and it
@@ -9,11 +19,13 @@ Here's what's up:
 - Some github repos like this one make regular predictions (there are also some algorithms like [this guy](https://github.com/microprediction/microprediction/blob/master/crawler_examples/soshed_boa.py) that use running processes instead)
 
 ## Why? 
-Free prediction for all ! 
+Free prediction for all means free bespoke business optimization for all.  
 
- - Get live prediction of public data for free (yes it really is an [api](http://api.microprediction.org/) that predicts anything)
- - See which R, Julia and Python time series approaches seem to work best, saving you from
-  trying out [hundreds of packages](https://www.microprediction.com/blog/popular-timeseries-packages) from PyPI and github of uncertain quality. 
+ - Yes it really is an [api](http://api.microprediction.org/) that predicts anything.
+ - Yes it also makes it easier to see which R, Julia and Python time series approaches seem to work best, saving you from
+  trying out [hundreds of packages](https://www.microprediction.com/blog/popular-timeseries-packages) from PyPI and github, any one of which might be of uncertain quality. 
+  
+## More background if you want it...
   
 Here's a [first glimpse](https://www.microprediction.com/welcome) for the uninitiated, some [categories of business application](https://www.microprediction.com/welcome-3), some remarks
 on why [microprediction is synomymous with AI](https://www.microprediction.com/welcome-4) due to the possibility of value function prediction, and a straightforward
@@ -21,7 +33,7 @@ on why [microprediction is synomymous with AI](https://www.microprediction.com/w
 are perfectly capable of [managing each other](https://www.microprediction.com/welcome-5) will sooner or later eclipse all other modes of production
 of prediction. In order to try to get this idea off the ground, there are some ongoing [competitions](https://www.microprediction.com/competitions) and developer incentives. 
     
-## Video tutorials
+## Video tutorials...
     
 Video tutorials are available at https://www.microprediction.com/python-1 to help you
 get started. 
@@ -31,31 +43,37 @@ get started.
 Presentations at Rutgers, MIT and elsewhere can be found in the [presentations](https://github.com/microprediction/micropresentations) repo. A book will be 
 published by MIT Press in 2021 on the topic. There are links to video presentations in some of the [blog](https://www.microprediction.com/blog) articles. 
 
-![](https://i.imgur.com/uwttTku.png)
+
  
-## Actors 
+# This repository 
 
-This repo shows how easy it is to set up models to make predictions using Github actions. 
+Now, about this repo. 
 
-While a continuous process might be more suited to submission of rapidly changing
-data, a scheduled job may work just fine. Furthermore, many streams are implied 
-copulas that don't change too often. 
+It's minimalist and simple. 
 
-They may be a tutorial in the (Knowledge Center)[https://www.microprediction.com/knowledge-center].
+It shows you how to make predictions using Github actions. 
 
-### What are z-streams? 
+It fits z-streams only. 
 
-See [An Introduction to Z-Streams](https://www.linkedin.com/pulse/short-introduction-z-streams-peter-cotton-phd/) or the
+
+## Aside: What are z-streams? 
+
+Glad you asked. See [An Introduction to Z-Streams](https://www.linkedin.com/pulse/short-introduction-z-streams-peter-cotton-phd/) or the
 microprediction [frequently asked questions](https://www.microprediction.com/faq). Put simply, some of the
 seemingly univariate time series such as [this one](https://www.microprediction.org/stream_dashboard.html?stream=z2~copula_x~copula_y~70) are
 really multi-variate implied copulas. You can retrieve them in multivariate
 format using the .get_lagged_copulas or .get_lagged_zvalues methods of the [MicroReader](https://github.com/microprediction/microprediction/blob/master/microprediction/reader.py). 
 
-## Install 
+## Aside: Why does it only fit z-streams and not the other ones?
+
+The z-stream distributions don't change as quickly as the values themselves. 
+
+## Install
+
+If you grepped for 'install' ...
 
     This repo isn't intended to be used as a package. 
     
-## On Forking and Github actions
-
-If you fork this repo, be aware that the github action won't run automatically. You'll have to create a new one and copy it over. 
+Go back to the top of this readme. 
+    
 
