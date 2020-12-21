@@ -60,4 +60,3 @@ if __name__ == "__main__":
                     pprint(res)
                 except Exception as e:
                     print(e)
-                time.sleep(1)
