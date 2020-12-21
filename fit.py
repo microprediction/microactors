@@ -15,7 +15,7 @@ import os
 WRITE_KEY = os.environ.get('WRITE_KEY')      # <-- You need to add a Github secret
 
 ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)       
-REPO = 'https://github.com/microprediction/microactors/blob/master/fit.py' # <--- Change your username
+REPO = 'https://github.com/nocluebutalotofit/microactors/blob/main/fit.py' # <--- Changed my username
 print('This is '+ANIMAL+' firing up')
 
 
