@@ -6,12 +6,18 @@
 3. Save the key as a Github secret called WRITE_KEY ([instructions](https://www.google.com/search?q=how+to+create+a+github+secret))
 4. Click on "accept" when Github asks you if you want to enable github actions. Go to Actions and you'll see the only action used
 in your repo (like [this one](https://github.com/microprediction/microactors/blob/main/.github/workflows/submit.yml)). You should be able to enable it. 
-5. Go to www.microprediction.org and plug your write key into the dashboard. You'll see something like this, eventually. 
+
+
+That's all. Later, go to www.microprediction.org and plug your write key into the dashboard. You'll see something like this, eventually. 
 
 ![](https://i.imgur.com/uwttTku.png)
 
 
 If you are curious about step 2, see [instructions](https://www.microprediction.com/private-keys) for other ways, and a cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier.
+
+## Like fitting multivariate densities or Copulas? 
+
+Modify fit.py as you see fit. 
 
 ## New to microprediction? 
 Here's what's up:
