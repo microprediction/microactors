@@ -1,0 +1,2 @@
+Perhaps you may have copied the hash of the key instead of the key into WRITE_KEY? 
+Or didn't create a key? Open up https://github.com/microprediction/microactors/blob/main/New_Key.ipynb and run it in Colab to make your own key
