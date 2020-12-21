@@ -35,7 +35,7 @@ jobs:
             pip install matplotlib
       - name: Run the model 
         env:
-          COMBLE_MAMMAL: ${{ secrets.COMBLE_MAMMAL }}
+          WRITE_KEY: ${{ secrets.WRITE_KEY }}
         run: |
           python fit.py
      
