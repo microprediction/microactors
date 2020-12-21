@@ -48,16 +48,15 @@ published by MIT Press in 2021 on the topic. There are links to video presentati
 
 
  
-# This repository 
+## This repository 
 
-Now, about this repo. 
+Now, back to this repo. 
 
-It's minimalist and simple. 
+ - It's minimalist and simple. 
+ - It shows you how to make predictions using Github actions. 
+ - It fits z-streams only. 
 
-It shows you how to make predictions using Github actions. 
-
-It fits z-streams only. 
-
+That's all. 
 
 ## Aside: What are z-streams? 
 
