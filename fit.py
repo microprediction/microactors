@@ -16,7 +16,7 @@ WRITE_KEY = os.environ.get('WRITE_KEY')      # <-- You need to add a Github secr
 
 ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)       
 REPO = 'https://github.com/nocluebutalotofit/microactors/blob/main/fit.py' # <--- Changed my username
-print('This is '+ANIMAL+' firing up')
+print(f'This is {ANIMAL} firing up')
 
 
 # Get historical data, fit a copula, and submit 
