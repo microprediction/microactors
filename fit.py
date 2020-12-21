@@ -12,14 +12,11 @@ import pandas as pd
 
 # Grab the Github secret 
 import os 
-COMBLE_MAMMAL = os.environ.get('COMBLE_MAMMAL')
-# 
-WRITE_KEY = COMBLE_MAMMAL
-ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)
-REPO = 'https://github.com/microprediction/microprediction/blob/master/copula_examples/' + ANIMAL.lower().replace(
-    ' ', '_') + '.py'
-print('This is '+ANIMAL)
-VERBOSE = False
+WRITE_KEY = os.environ.get('WRITE_KEY')      # <-- You need to add a Github secret
+
+ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)       
+REPO = 'https://github.com/microprediction/microactors/blob/master/fit.py' # <--- Change your username
+print('This is '+ANIMAL+' firing up')
 
 
 # Get historical data, fit a copula, and submit 
@@ -31,13 +28,19 @@ def fit_and_sample(lagged_zvalues:[[float]],num:int, copula=None):
            returns: [ [z1, z2, z3] ]  representative sample
 
     """
-    # Remark: It's lazy to just sample synthetic data
-    # Some more evenly spaced sampling would be preferable.  
-    # See https://www.microprediction.com/blog/lottery for discussion
+    # This is the part you'll want to change. 
+    # Remark 1: It's lazy to just sample synthetic data
+    # Some more evenly spaced sampling would be preferable. 
+    # Remark 2: Any multivariate density estimation could go here. 
+    # Remark 3: If you want to literally fit to a Copula (i.e. roughly uniform margins)
+    # then you might want to use mw.get_lagged_copulas(name=name, count= 5000) instead
+    #
+    # See https://www.microprediction.com/blog/lottery for discussion of why evenly 
+    # spaced samples are likely to serve you better. 
 
     df = pd.DataFrame(data=lagged_zvalues)
     if copula is None:
-        copula = GaussianMultivariate()
+        copula = GaussianMultivariate() # <--- 
     copula.fit(df)
     synthetic = copula.sample(num)
     return synthetic.values.tolist()
