@@ -48,9 +48,9 @@ if __name__ == "__main__":
     mw.set_repository(REPO) # Just polite
 
     NAMES = [ n for n in mw.get_stream_names() if 'z2~' in n or 'z3~' in n ]
-    for _ in range(10):
+    for _ in range(5):
         name = random.choice(NAMES)
-        for delay in mw.DELAYS:
+        for delay in [ mw.DELAYS[0], mw.DELAYS[-1]]:
             lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
             if len(lagged_zvalues)>20:
                 zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
