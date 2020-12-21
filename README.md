@@ -15,9 +15,10 @@ That's all. Later, go to www.microprediction.org and plug your write key into th
 
 If you are curious about step 2, see [instructions](https://www.microprediction.com/private-keys) for other ways, and a cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier.
 
-## Like fitting multivariate densities or Copulas? 
+## Do you like fitting multivariate densities or Copulas? 
 
-Modify fit.py as you see fit. 
+Modify your fit.py (similar to [fit.py](https://github.com/microprediction/microactors/blob/main/fit.py) provided). For example you can change the
+choice of Copula, or use an entirely different technique. The only important thing is that you spit out 225 "scenarios". 
 
 ## New to [microprediction.org](www.microprediction.org)? 
 Here's what's up:
