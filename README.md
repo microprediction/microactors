@@ -2,7 +2,10 @@
 # How you use this repository 
 
 1. Fork it
-2. Compute yourself a WRITE_KEY (really easy - see [instructions](https://www.microprediction.com/private-keys) and cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier). 
+2. Compute yourself a WRITE_KEY:
+   - Run this bash command in terminal (MacOS and Linux).
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/microprediction/muid/master/examples/mine_from_venv.sh)
+   - Or see [instructions](https://www.microprediction.com/private-keys) for other ways, and a cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier. 
 3. Add a Github secret called WRITE_KEY and set it to your write key. 
 4. Click on "accept" when Github asks you if you want to enable github actions. Go to Actions and you'll see the only action used
 in your repo (like [this one](https://github.com/microprediction/microactors/blob/main/.github/workflows/submit.yml)). You should be able to enable it. 
