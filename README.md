@@ -19,7 +19,7 @@ If you are curious about step 2, see [instructions](https://www.microprediction.
 
 Modify fit.py as you see fit. 
 
-## New to microprediction? 
+## New to [microprediction.org](www.microprediction.org)? 
 Here's what's up:
 
 - Anyone can publish live data repeatedly, [like this](https://github.com/microprediction/microprediction/blob/master/feed_examples_live/traffic_live.py) say, and it
