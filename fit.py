@@ -12,9 +12,8 @@ import pandas as pd
 
 # Grab the Github secret 
 import os 
-WRITE_KEY = os.environ.get('WRITE_KEY')      # <-- You need to add a Github secret
-
-ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)       
+WRITE_KEY = os.environ.get('WRITE_KEY')          # <-- You need to add a Github secret
+ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)  # <-- Your nom de plume      
 REPO = 'https://github.com/microprediction/microactors/blob/master/fit.py' # <--- Change your username
 print('This is '+ANIMAL+' firing up')
 
@@ -49,20 +48,20 @@ def fit_and_sample(lagged_zvalues:[[float]],num:int, copula=None):
 
 if __name__ == "__main__":
     mw = MicroWriter(write_key=WRITE_KEY)
-    mw.set_repository(REPO) # Just polite
-
+    mw.set_repository(REPO) # Just polite, creates a CODE badge on the leaderboard
+    
     NAMES = [ n for n in mw.get_stream_names() if 'z2~' in n or 'z3~' in n ]
-    for _ in range(5):
+    for _ in range(1):       
         name = random.choice(NAMES)
-        for delay in [ mw.DELAYS[0], mw.DELAYS[-1]]:
-            lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
-            if len(lagged_zvalues)>20:
-                zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
-                pprint((name, delay))
-                try:
+        lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
+        if len(lagged_zvalues)>20:
+            zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
+            pprint((name, delay))
+            try:
+                for delay in mw.DELAYS:
                     res = mw.submit_zvalues(name=name, zvalues=zvalues, delay=delay )
-                    pprint(res)
-                except Exception as e:
-                    print(e)
+                pprint(res)
+            except Exception as e:
+                print(e)
     # Quit some
     mw.cancel_worst_active(stop_loss=STOP_LOSS, num=3)
