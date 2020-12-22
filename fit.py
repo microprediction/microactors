@@ -18,6 +18,7 @@ ANIMAL = MicroWriter.animal_from_key(WRITE_KEY)
 REPO = 'https://github.com/microprediction/microactors/blob/master/fit.py' # <--- Change your username
 print('This is '+ANIMAL+' firing up')
 
+STOP_LOSS = 25 # <--- Governs when we give up on a stream/horizon
 
 # Get historical data, fit a copula, and submit 
 
@@ -63,3 +64,5 @@ if __name__ == "__main__":
                     pprint(res)
                 except Exception as e:
                     print(e)
+    # Quit some
+    mw.cancel_worst_active(stop_loss=STOP_LOSS, num=3)
