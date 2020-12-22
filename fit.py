@@ -22,22 +22,20 @@ STOP_LOSS = 25 # <--- Governs when we give up on a stream/horizon
 # Get historical data, fit a copula, and submit 
 
 def fit_and_sample(lagged_zvalues:[[float]],num:int, copula=None):
-    """ Example of fitting a copula function, and sampling
-           lagged_zvalues: [ [z1,z2,z3] ]  distributed N(0,1) margins, roughly
-           copula : Something from https://pypi.org/project/copulas/
-           returns: [ [z1, z2, z3] ]  representative sample
+    """ Example of creating a "sample" of future values
+    
+           lagged_zvalues:     [ [z1,z2,z3] ]  distributed N(0,1) margins, roughly
+           copula :            Something from https://pypi.org/project/copulas/
+           returns:            [ [z1, z2, z3] ]  representative sample
 
+        Swap out this function for whatever you like. 
     """
-    # This is the part you'll want to change. 
     # Remark 1: It's lazy to just sample synthetic data
-    # Some more evenly spaced sampling would be preferable. 
     # Remark 2: Any multivariate density estimation could go here. 
-    # Remark 3: If you want to literally fit to a Copula (i.e. roughly uniform margins)
-    # then you might want to use mw.get_lagged_copulas(name=name, count= 5000) instead
+    # Remark 3: If you prefer uniform margin, use mw.get_lagged_copulas(name=name, count= 5000) 
     #
-    # See https://www.microprediction.com/blog/lottery for discussion of why evenly 
-    # spaced samples are likely to serve you better. 
-
+    # See https://www.microprediction.com/blog/lottery for discussion of this "game" 
+    
     df = pd.DataFrame(data=lagged_zvalues)
     if copula is None:
         copula = GaussianMultivariate() # <--- 
@@ -63,5 +61,5 @@ if __name__ == "__main__":
                 pprint(res)
             except Exception as e:
                 print(e)
-    # Quit some
+    # Quit some stream/horizon combinations where we fare poorly
     mw.cancel_worst_active(stop_loss=STOP_LOSS, num=3)
