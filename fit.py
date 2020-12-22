@@ -54,7 +54,7 @@ if __name__ == "__main__":
         lagged_zvalues = mw.get_lagged_zvalues(name=name, count= 5000)
         if len(lagged_zvalues)>20:
             zvalues = fit_and_sample(lagged_zvalues=lagged_zvalues, num=mw.num_predictions)
-            pprint((name, delay))
+            pprint( (name, len(lagged_zvalues), len(zvalues)))
             try:
                 for delay in mw.DELAYS:
                     res = mw.submit_zvalues(name=name, zvalues=zvalues, delay=delay )
