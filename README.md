@@ -1,4 +1,8 @@
 
+# What it does
+
+1. Tests open source copulas package against real data
+
 # How you use this repository 
 
 1. Fork it 
