@@ -1,7 +1,7 @@
 
 # What it does
 
-1. Tests open source copulas package against real data
+1. Tests open source copulas package against real data, by submitting to www.microprediction.org
 
 # How you use this repository 
 
