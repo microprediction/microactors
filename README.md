@@ -19,7 +19,7 @@ That's all. Later, go to www.microprediction.org and plug your write key into th
 
 If you are curious about step 2, see [instructions](https://www.microprediction.com/private-keys) for other ways, and a cheesy video explaining that a WRITE_KEY is a Memorable Unique Identifier.
 
-If you'd rather not fork, just copy [fit.py](https://github.com/microprediction/microactors/blob/main/fit.py) and [submit.yml](https://github.com/microprediction/microactors/blob/main/.github/workflows/submit.yml) as that's pretty much it. 
+If you'd rather not fork, just copy [fit.py](https://github.com/microprediction/microactors/blob/main/fit.py) and [daily.yml](https://github.com/microprediction/microactors/blob/main/.github/workflows/daily.yml) as that's pretty much it. 
 
 ## Do you like fitting multivariate densities or Copulas? 
 
@@ -76,7 +76,7 @@ Glad you asked. See [An Introduction to Z-Streams](https://www.linkedin.com/puls
 microprediction [frequently asked questions](https://www.microprediction.com/faq). Put simply, some of the
 seemingly univariate time series such as [this one](https://www.microprediction.org/stream_dashboard.html?stream=z2~copula_x~copula_y~70) are
 really multi-variate implied copulas. You can retrieve them in multivariate
-format using the .get_lagged_copulas or .get_lagged_zvalues methods of the [MicroReader](https://github.com/microprediction/microprediction/blob/master/microprediction/reader.py). 
+format using the `.get_lagged_copulas` or `.get_lagged_zvalues` methods of the [MicroReader](https://github.com/microprediction/microprediction/blob/master/microprediction/reader.py). 
 
 ## Aside: Why does it only fit z-streams and not the other ones?
 
